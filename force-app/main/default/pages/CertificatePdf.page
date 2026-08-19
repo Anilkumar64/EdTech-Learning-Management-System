@@ -1,0 +1,23 @@
+<apex:page standardController="Certificate__c" renderAs="pdf" showHeader="false" sidebar="false" applyHtmlTag="false">
+    <html>
+        <head>
+            <style>
+                body { font-family: Arial, sans-serif; color: #1f2933; }
+                .wrap { border: 6px solid #243b53; padding: 48px; text-align: center; }
+                h1 { font-size: 32px; margin-bottom: 20px; }
+                .name { font-size: 24px; font-weight: bold; margin: 24px 0; }
+                .detail { font-size: 16px; margin: 10px 0; }
+            </style>
+        </head>
+        <body>
+            <div class="wrap">
+                <h1>Certificate of Completion</h1>
+                <div class="detail">This certifies that</div>
+                <div class="name">{!Certificate__c.Enrollment__r.Student__r.Name}</div>
+                <div class="detail">has completed</div>
+                <div class="name">{!Certificate__c.Enrollment__r.Course__r.Name}</div>
+                <div class="detail">Issued on {!Certificate__c.Issued_Date__c}</div>
+            </div>
+        </body>
+    </html>
+</apex:page>
